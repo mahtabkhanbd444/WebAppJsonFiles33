@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mobile App News Feed</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            width: 100%;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .news-card {
+            background: white;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            padding: 15px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        .news-title {
+            font-size: 20px;
+            font-weight: bold;
+        }
+        .news-date {
+            color: gray;
+            font-size: 14px;
+        }
+        .news-content {
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>News Feed</h1>
+        <div id="news-feed"></div>
+    </div>
+    <script>
+        const newsFeed = [
+            { title: 'Breaking News: New Tech Innovations', date: '2026-02-22', content: 'New technology is changing the way we...' },
+            { title: 'Sports Update: Local Team Wins Championship', date: '2026-02-21', content: 'Last night, the local team won the championship in a thrilling game...' },
+            { title: 'Entertainment: Upcoming Movie Releases', date: '2026-02-20', content: 'Here are some exciting movies coming out this summer...' }
+        ];
+
+        const newsFeedElement = document.getElementById('news-feed');
+
+        newsFeed.forEach(news => {
+            const newsCard = document.createElement('div');
+            newsCard.className = 'news-card';
+            newsCard.innerHTML = `
+                <div class="news-title">${news.title}</div>
+                <div class="news-date">${news.date}</div>
+                <div class="news-content">${news.content}</div>
+            `;
+            newsFeedElement.appendChild(newsCard);
+        });
+    </script>
+</body>
+</html>
